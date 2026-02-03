@@ -1,0 +1,17 @@
+# HOLFY27-8805 Startup-Only Allowed Domains
+# These domains are allowed DURING startup only
+# After lab is READY, these are replaced with just the allowlist
+# Use for one-time downloads, package installs, etc.
+
+# Package downloads needed during initial setup
+
+archive.ubuntu.com
+security.ubuntu.com
+download.docker.com
+github.com
+hashicorp.com
+
+# Container images pulled during startup
+gcr.io
+k8s.io
+quay.io
