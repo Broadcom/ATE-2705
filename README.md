@@ -1,4 +1,5 @@
-# ATE-2705 - Future Lab
+# ATE-2705 - VCF 9.0.1 Single Site Labs for ATE Deliveries
+# Please Reach out to Ben Todd before modifying this repo.
 
 ## HOLFY27 VPodRepo Format
 
