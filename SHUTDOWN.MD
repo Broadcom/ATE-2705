@@ -1,8 +1,11 @@
-Shutdown procedure:
-1) Shutdown nested environment:
-ssh holuser@manager
-cd hol
-python3 Shutdown/Shutdown.py
+## Shutdown procedure:
+
+#### 1. Shutdown nested environment:
+  1. ssh holuser@manager
+
+  2. cd hol
+
+  3. python3 Shutdown/Shutdown.py
 
 Wait until complete. 
 
