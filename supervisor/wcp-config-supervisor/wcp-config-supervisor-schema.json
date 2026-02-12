@@ -1,0 +1,486 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vmware.com/schemas/wcp-config-schema.json",
+  "title": "Enable WCP workflow model schema",
+  "description": "A schema used for the validation of the export model in the Enable WCP workflow",
+  "type": "object",
+  "properties": {
+    "specVersion": {
+      "type": "string"
+    },
+    "supervisorSpec": {
+      "type": "object",
+      "properties": {
+        "supervisorName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "supervisorName"
+      ]
+    },
+    "envSpec": {
+      "type": "object",
+      "properties": {
+        "vcenterDetails": {
+          "type": "object",
+          "properties": {
+            "vcenterAddress": {
+              "type": "string"
+            },
+            "vcenterDatacenter": {
+              "type": "string"
+            },
+            "vcenterCluster": {
+              "type": "string"
+            },
+            "vSphereZones": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "vcenterAddress"
+          ]
+        }
+      },
+      "required": [
+        "vcenterDetails"
+      ]
+    },
+    "tkgsComponentSpec": {
+      "type": "object",
+      "properties": {
+        "aviComponents": {
+          "type": "object",
+          "properties": {
+            "aviName": {
+              "type": "string"
+            },
+            "aviUsername": {
+              "type": "string"
+            },
+            "aviController01Ip": {
+              "type": "string"
+            },
+            "aviCertAuthorityChain": {
+              "type": "string"
+            },
+            "aviPasswordBase64": {
+              "type": "string"
+            },
+            "aviCloudName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "aviName",
+            "aviUsername",
+            "aviController01Ip",
+            "aviCertAuthorityChain",
+            "aviPasswordBase64"
+          ]
+        },
+        "haProxyComponents": {
+          "type": "object",
+          "properties": {
+            "haProxyName": {
+              "type": "string"
+            },
+            "haProxyUsername": {
+              "type": "string"
+            },
+            "haProxyControllerEndpoint": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "haProxyVirtualIpAddressRanges": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "haProxyCertAuthorityChain": {
+              "type": "string"
+            },
+            "haProxyPassword": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "haProxyName",
+            "haProxyUsername",
+            "haProxyControllerEndpoint",
+            "haProxyVirtualIpAddressRanges",
+            "haProxyCertAuthorityChain",
+            "haProxyPassword"
+          ]
+        },
+        "foundationLoadBalancerComponents": {
+          "type": "object",
+          "properties": {
+            "flbName": {
+              "type": "string"
+            },
+            "flbSize": {
+              "type": "string"
+            },
+            "flbAvailability": {
+              "type": "string"
+            },
+            "flbVipRanges": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flbDnsServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flbNtpServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flbSyslogEndpoint": {
+              "type": "string"
+            },
+            "flbSyslogCertificateAuthorityPem": {
+              "type": "string"
+            },
+            "flbManagementNetwork": {
+              "type": "object",
+              "properties": {
+                "flbNetworkIpAssignmentMode": {
+                  "type": "string"
+                },
+                "flbNetworkName": {
+                  "type": "string"
+                },
+                "flbNetworkPortgroupId": {
+                  "type": "string"
+                },
+                "flbNetworkIpAddressRanges": {
+                  "type": "string"
+                },
+                "flbNetworkGateway": {
+                  "type": "string"
+                },
+                "flbNetworkSubnet": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "flbNetworkIpAssignmentMode",
+                "flbNetworkName"
+              ]
+            },
+            "flbVirtualServerNetwork": {
+              "type": "object",
+              "properties": {
+                "flbNetworkIpAssignmentMode": {
+                  "type": "string"
+                },
+                "flbNetworkName": {
+                  "type": "string"
+                },
+                "flbNetworkPortgroupId": {
+                  "type": "string"
+                },
+                "flbNetworkIpAddressRanges": {
+                  "type": "string"
+                },
+                "flbNetworkGateway": {
+                  "type": "string"
+                },
+                "flbNetworkSubnet": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "flbNetworkIpAssignmentMode",
+                "flbNetworkName"
+              ]
+            },
+            "flbTransitNetwork": {
+              "type": "object",
+              "properties": {
+                "flbNetworkIpAssignmentMode": {
+                  "type": "string"
+                },
+                "flbNetworkName": {
+                  "type": "string"
+                },
+                "flbNetworkPortgroupId": {
+                  "type": "string"
+                },
+                "flbNetworkIpAddressRanges": {
+                  "type": "string"
+                },
+                "flbNetworkGateway": {
+                  "type": "string"
+                },
+                "flbNetworkSubnet": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "flbNetworkIpAssignmentMode",
+                "flbNetworkName"
+              ]
+            }
+          },
+          "required": [
+            "flbName",
+            "flbSize",
+            "flbAvailability",
+            "flbVipRanges",
+            "flbManagementNetwork",
+            "flbVirtualServerNetwork"
+          ]
+        },
+        "tkgsMgmtNetworkSpec": {
+          "type": "object",
+          "properties": {
+            "tkgsMgmtIpAssignmentMode": {
+              "type": "string"
+            },
+            "tkgsMgmtFloatingIp": {
+              "type": "string"
+            },
+            "tkgsMgmtNetworkName": {
+              "type": "string"
+            },
+            "tkgsMgmtZoneNetworks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsMgmtNetworkGatewayCidr": {
+              "type": "string"
+            },
+            "tkgsMgmtNetworkStartingIp": {
+              "type": "string"
+            },
+            "tkgsMgmtNetworkDnsServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsMgmtNetworkSearchDomains": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsMgmtNetworkNtpServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "tkgsMgmtIpAssignmentMode"
+          ]
+        },
+        "tkgsStoragePolicySpec": {
+          "type": "object",
+          "properties": {
+            "masterStoragePolicy": {
+              "type": "string"
+            },
+            "ephemeralStoragePolicy": {
+              "type": "string"
+            },
+            "imageStoragePolicy": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "masterStoragePolicy",
+            "ephemeralStoragePolicy",
+            "imageStoragePolicy"
+          ]
+        },
+        "tkgsPrimaryWorkloadNetwork": {
+          "type": "object",
+          "properties": {
+            "tkgsPrimaryWorkloadIpAssignmentMode": {
+              "type": "string"
+            },
+            "tkgsPrimaryWorkloadPortgroupName": {
+              "type": "string"
+            },
+            "tkgsPrimaryWorkloadNetworkName": {
+              "type": "string"
+            },
+            "tkgsPrimaryWorkloadNetworkGatewayCidr": {
+              "type": "string"
+            },
+            "tkgsPrimaryWorkloadNetworkStartRange": {
+              "type": "string"
+            },
+            "tkgsPrimaryWorkloadNetworkEndRange": {
+              "type": "string"
+            },
+            "tkgsWorkloadDnsServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsWorkloadNtpServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsWorkloadServiceCidr": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tkgsPrimaryWorkloadIpAssignmentMode",
+            "tkgsPrimaryWorkloadPortgroupName",
+            "tkgsPrimaryWorkloadNetworkName",
+            "tkgsWorkloadServiceCidr"
+          ]
+        },
+        "tkgsNcpClusterNetworkInfo": {
+          "type": "object",
+          "properties": {
+            "tkgsClusterDistributedSwitch": {
+              "type": "string"
+            },
+            "tkgsNsxEdgeCluster": {
+              "type": "string"
+            },
+            "tkgsNsxTier0Gateway": {
+              "type": "string"
+            },
+            "tkgsRoutedMode": {
+              "type": "boolean"
+            },
+            "tkgsNamespaceSubnetPrefix": {
+              "type": "string"
+            },
+            "tkgsNamespaceNetworkCidrs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsIngressCidrs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsEgressCidrs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsWorkloadDnsServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tkgsWorkloadServiceCidr": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tkgsClusterDistributedSwitch",
+            "tkgsNsxEdgeCluster",
+            "tkgsNsxTier0Gateway",
+            "tkgsRoutedMode",
+            "tkgsNamespaceSubnetPrefix",
+            "tkgsNamespaceNetworkCidrs",
+            "tkgsIngressCidrs",
+            "tkgsEgressCidrs",
+            "tkgsWorkloadServiceCidr"
+          ]
+        },
+        "nsxVpcNetworkInfo": {
+          "type": "object",
+          "properties": {
+            "nsxVpcProject": {
+              "type": "string"
+            },
+            "nsxVpcConnectivityProfile": {
+              "type": "string"
+            },
+            "tkgsWorkloadServiceCidr": {
+              "type": "string"
+            },
+            "nsxVpcPrivateCidrs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nsxVpcDnsServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nsxNtpDnsServers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "nsxVpcProject",
+            "nsxVpcConnectivityProfile",
+            "tkgsWorkloadServiceCidr",
+            "nsxVpcPrivateCidrs",
+            "nsxVpcDnsServers"
+          ]
+        },
+        "controlPlaneSize": {
+          "type": "string"
+        },
+        "defaultServiceContentLibrary": {
+          "type": "string"
+        },
+        "apiServerDnsNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cpvmCount": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "tkgsMgmtNetworkSpec",
+        "tkgsStoragePolicySpec",
+        "controlPlaneSize"
+      ]
+    }
+  },
+  "required": [
+    "specVersion",
+    "supervisorSpec",
+    "envSpec",
+    "tkgsComponentSpec"
+  ]
+}

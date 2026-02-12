@@ -1,0 +1,56 @@
+{
+  "specVersion": "1.0",
+  "supervisorSpec": {
+    "supervisorName": "supervisor"
+  },
+  "envSpec": {
+    "vcenterDetails": {
+      "vcenterAddress": "vc-wld01-a.site-a.vcf.lab",
+      "vcenterDatacenter": "dc-a",
+      "vSphereZones": [
+        "z-wld-a"
+      ]
+    }
+  },
+  "tkgsComponentSpec": {
+    "tkgsMgmtNetworkSpec": {
+      "tkgsMgmtIpAssignmentMode": "STATICRANGE",
+      "tkgsMgmtNetworkName": "z-wld-a-supervisor-mgmt",
+      "tkgsMgmtZoneNetworks": [
+        "z-wld-a-supervisor-mgmt"
+      ],
+      "tkgsMgmtNetworkGatewayCidr": "10.1.1.1/24",
+      "tkgsMgmtNetworkStartingIp": "10.1.1.85 - 10.1.1.89",
+      "tkgsMgmtNetworkDnsServers": [
+        "10.1.1.1"
+      ],
+      "tkgsMgmtNetworkSearchDomains": [
+        "site-a.vcf.lab"
+      ],
+      "tkgsMgmtNetworkNtpServers": [
+        "10.1.1.1"
+      ]
+    },
+    "tkgsStoragePolicySpec": {
+      "masterStoragePolicy": "vSAN Default Storage Policy",
+      "ephemeralStoragePolicy": "vSAN Default Storage Policy",
+      "imageStoragePolicy": "vSAN Default Storage Policy"
+    },
+    "nsxVpcNetworkInfo": {
+      "nsxVpcProject": "Default",
+      "nsxVpcConnectivityProfile": "Default VPC Connectivity Profile",
+      "tkgsWorkloadServiceCidr": "10.96.0.0/23",
+      "nsxVpcPrivateCidrs": [
+        "172.16.201.0/24"
+      ],
+      "nsxVpcDnsServers": [
+        "10.1.1.1"
+      ],
+      "nsxNtpDnsServers": [
+        "10.1.1.1"
+      ]
+    },
+    "controlPlaneSize": "SMALL",
+    "cpvmCount": 1
+  }
+}
